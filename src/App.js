@@ -1,22 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import TrafficLightContainer from "./components/TrafficLightContainer";
+
+const trafficLightColors = ["green", "yellow", "red"];
+const durationsMs = [5000, 1000, 2000]; // green, yellow, red
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setCounter((prev) => (prev + 1) % trafficLightColors.length);
+    }, durationsMs[counter]);
+    return () => clearTimeout(timeoutId);
+  }, [counter]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TrafficLightContainer activeColor={trafficLightColors[counter]} />
       </header>
     </div>
   );
