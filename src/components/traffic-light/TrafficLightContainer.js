@@ -1,4 +1,5 @@
 import React from "react";
+import "./traffic-light.css";
 import TrafficLight from "./TrafficLight";
 
 function TrafficLightContainer({ activeColor }) {
@@ -12,3 +13,5 @@ function TrafficLightContainer({ activeColor }) {
 }
 
 export default TrafficLightContainer;
+
+

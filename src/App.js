@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import TrafficLightContainer from "./components/TrafficLightContainer";
+import TrafficLightContainer from "./components/traffic-light/TrafficLightContainer";
 
 const trafficLightColors = ["green", "yellow", "red"];
 const durationsMs = [5000, 1000, 2000]; // green, yellow, red

@@ -12,3 +12,5 @@ function TrafficLight({ color, active }) {
 }
 
 export default TrafficLight;
+
+
